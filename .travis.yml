@@ -11,4 +11,4 @@ branches:
 before_script:
   - npm install
 script:
-  - ng test
+  - ng test --browsers ChromeHeadless
