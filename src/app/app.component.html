@@ -6,4 +6,23 @@
 <ul>
   <li>Click <a href="plotly">here</a> for sample Plotly graph!!</li>
 </ul>
+
+<table border="2">
+  <tr
+    *ngFor="
+      let todo of (todos
+        | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize)
+    "
+  >
+    <td>{{ todo.id }}</td>
+    <td>{{ todo.title }}</td>
+  </tr>
+</table>
+
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="todos.length"
+></ngb-pagination>
+
 <router-outlet></router-outlet>
